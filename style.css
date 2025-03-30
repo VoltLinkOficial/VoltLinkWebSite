@@ -1,117 +1,56 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltlink - Instalaciones Eléctricas y Automatización</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            background-color: #121826;
-            color: #E0E0E0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1A2232;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #00AEEF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 50px;
-            text-align: center;
-        }
-        button {
-            background-color: #00AEEF;
-            color: #121826;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0088CC;
-        }
-        footer {
-            background-color: #1A2232;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Voltlink</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="inicio">
-        <h2>Bienvenido a Voltlink</h2>
-        <p>Expertos en instalaciones eléctricas y automatización del hogar.</p>
-    </section>
-
-    <section id="nosotros">
-        <h2>Sobre Nosotros</h2>
-        <p>Voltlink es una empresa especializada en soluciones eléctricas y automatización residencial.</p>
-    </section>
-
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Instalaciones eléctricas residenciales</li>
-            <li>Automatización del hogar</li>
-            <li>Domótica y control inteligente</li>
-        </ul>
-    </section>
-
-    <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Galería con imágenes de nuestros trabajos realizados (por agregar).</p>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Voltlink. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+body {
+    background-color: #121826;
+    color: #E0E0E0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+header {
+    background-color: #1A2232;
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #00AEEF;
+    text-decoration: none;
+    font-weight: bold;
+}
+button {
+    background-color: #00AEEF;
+    color: #121826;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0088CC;
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+.whatsapp-float i {
+    margin-top: 15px;
+}
