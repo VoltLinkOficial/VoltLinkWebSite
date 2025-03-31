@@ -1,5 +1,5 @@
-version: "3"
 services:
+  web:
     image: php:7.4-apache
     container_name: demo_web
     volumes:
@@ -7,7 +7,6 @@ services:
     ports:
       - "80:80"
     environment:
-      # Estas variables no se usan directamente, pero te sirven de referencia para usar en php.ini
       - SMTP=mailhog
       - smtp_port=1025
     depends_on:
@@ -17,5 +16,5 @@ services:
     image: mailhog/mailhog
     container_name: demo_mailhog
     ports:
-      - "1025:1025"  # Puerto SMTP
-      - "8025:8025"  # Interfaz web
+      - "1025:1025"
+      - "8025:8025"
