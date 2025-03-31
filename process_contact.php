@@ -12,8 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $contenido .= "Nombre: $nombre\n";
   $contenido .= "Correo Electrónico: $email\n";
   $contenido .= "Mensaje:\n$mensaje\n";
-
-  // Configurar cabeceras
   $cabeceras = "From: $email\r\nReply-To: $email\r\n";
 
   // Intentar enviar el correo
