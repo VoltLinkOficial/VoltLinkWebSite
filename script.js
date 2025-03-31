@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelectorAll("header nav ul li a");
   const sections = document.querySelectorAll("main section");
+  const themeToggle = document.getElementById("theme-toggle");
 
   // Función para mostrar la sección seleccionada
   function showSection(sectionId) {
@@ -29,4 +30,16 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     showSection("inicio");
   }
+
+  // Funcionalidad para cambiar tema claro/oscuro
+  themeToggle.addEventListener("click", function() {
+    // Alterna la clase "dark" en el body
+    document.body.classList.toggle("dark");
+    // Actualiza el texto del botón según el estado
+    if (document.body.classList.contains("dark")) {
+      themeToggle.textContent = "Tema Claro";
+    } else {
+      themeToggle.textContent = "Tema Oscuro";
+    }
+  });
 });
