@@ -19,7 +19,7 @@ header {
   z-index: 1000;
   background-color: #111;
   padding: 10px 0;
-  border-bottom: 3px solid #e53935;
+  border-bottom: 3px solid #161448;
 }
 
 .top-container {
@@ -54,13 +54,30 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #e53935;
+  background-color: #161448;
   border-radius: 3px;
+}
+
+/* Estilo para el botón de tema */
+#theme-toggle {
+  background-color: #161448;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: #303072;
 }
 
 /* HERO Banner */
 .hero {
-  background: linear-gradient(135deg, #e53935, #f44336);
+  background: linear-gradient(135deg, #161448, #303072);
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -106,7 +123,7 @@ main section h2 {
   text-align: left;
   margin-bottom: 20px;
   font-size: 32px;
-  color: #e53935;
+  color: #161448;
 }
 
 main section p,
@@ -121,15 +138,15 @@ main section ul {
 }
 
 main section blockquote {
-  border-left: 3px solid #e53935;
+  border-left: 3px solid #161448;
   padding-left: 15px;
   font-style: italic;
   color: #555;
 }
 
-/* Bloque con fondo para transiciones internas */
+/* Bloque de información con fondo para transiciones internas */
 .transicion {
-  background-color: #ffe0b2;
+  background-color: #e0e0f8;
   color: #333;
   padding: 20px;
   border-radius: 4px;
@@ -206,4 +223,48 @@ form textarea {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Estilos para el tema oscuro */
+body.dark {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark header {
+  background-color: #000;
+}
+
+body.dark nav ul li a {
+  color: #ccc;
+}
+
+body.dark main section {
+  background-color: #333;
+  color: #eee;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #0e0e2c, #1a1a47);
+}
+
+body.dark .transicion {
+  background-color: #444;
+  color: #ddd;
+}
+
+body.dark button,
+body.dark input[type="submit"] {
+  background-color: #161448;
+}
+
+/* Estilos para el botón de tema en modo oscuro */
+body.dark #theme-toggle {
+  background-color: #ccc;
+  color: #000;
+}
+
+body.dark #theme-toggle:hover {
+  background-color: #e0e0f8;
 }
