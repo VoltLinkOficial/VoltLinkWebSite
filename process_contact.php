@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje = htmlspecialchars(trim($_POST['mensaje']));
 
     // Configurar a quién se enviará el correo (tu email)
-    $destinatario = "VoltLinkOficial.com";
-    $asunto = "Nuevo mensaje de contacto de $nombre";
+    $destinatario = "VoltlinkOficial@hotmail.com";
+    $asunto = "Informacion Paguina Web de $nombre";
     $cuerpo = "Has recibido un nuevo mensaje desde el formulario de contacto.\n\n";
     $cuerpo .= "Nombre: $nombre\n";
     $cuerpo .= "Correo Electrónico: $email\n";
