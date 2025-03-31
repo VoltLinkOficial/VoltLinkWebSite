@@ -4,184 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Voltlink - Sitio Profesional</title>
-  <style>
-    /* Reset y estilos globales */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    a { 
-      text-decoration: none; 
-    }
-
-    /* HEADER - sticky y profesional */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #111;
-      padding: 10px 0;
-      border-bottom: 3px solid #e53935;
-    }
-    header .top-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-    header .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #fff;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-    }
-    header nav ul li {
-      margin: 0 15px;
-    }
-    header nav ul li a {
-      color: #fff;
-      font-size: 16px;
-      padding: 8px 12px;
-      transition: background-color 0.3s;
-    }
-    header nav ul li a:hover {
-      background-color: #e53935;
-      border-radius: 3px;
-    }
-
-    /* HERO BANNER similar al estilo SOLIDWORKS */
-    .hero {
-      background: linear-gradient(135deg, #e53935, #f44336);
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 20px;
-    }
-
-    /* CONTENEDOR GENERAL para el contenido principal */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    /* Layout de secciones tipo tabs */
-    main section {
-      display: none;
-      background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 40px 20px;
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-    main section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    main section h2 {
-      text-align: left;
-      margin-bottom: 20px;
-      font-size: 32px;
-      color: #e53935;
-    }
-    main section p,
-    main section ul,
-    main section blockquote {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-    main section ul {
-      list-style: disc inside;
-    }
-    main section blockquote {
-      border-left: 3px solid #e53935;
-      padding-left: 15px;
-      font-style: italic;
-      color: #555;
-    }
-    /* Bloque de información con color de fondo (transición interna) */
-    .transicion {
-      background-color: #ffe0b2;
-      color: #333;
-      padding: 20px;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    /* Botón de WhatsApp y Enviar */
-    button, input[type="submit"] {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    button:hover, input[type="submit"]:hover {
-      background-color: #1da851;
-    }
-    /* Formularios */
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    form label {
-      margin-top: 10px;
-    }
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      max-width: 600px;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form textarea { resize: vertical; }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header .top-container {
-        flex-direction: column;
-      }
-      header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .hero h1 {
-        font-size: 32px;
-      }
-      .hero p {
-        font-size: 18px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -190,7 +14,7 @@
       <div class="logo">Voltlink</div>
       <nav>
         <ul>
-          <!-- Usamos href y atributo data-section para navegación interna -->
+          <!-- Usamos href y data-section para navegación interna -->
           <li><a href="#inicio" data-section="inicio">Inicio</a></li>
           <li><a href="#servicios" data-section="servicios">Servicios</a></li>
           <li><a href="#nosotros" data-section="nosotros">Nosotros</a></li>
@@ -214,7 +38,10 @@
       <!-- Sección Inicio -->
       <section id="inicio" class="active">
         <h2>Bienvenidos a Voltlink</h2>
-        <p>Somos expertos en instalaciones eléctricas y automatización del hogar. Nuestra misión es brindar soluciones seguras, eficientes e innovadoras.</p>
+        <p>
+          Somos expertos en instalaciones eléctricas y automatización del hogar. 
+          Nuestra misión es brindar soluciones seguras, eficientes e innovadoras.
+        </p>
         <div class="transicion">
           <p>La automatización de tu hogar mejora la comodidad y optimiza el consumo energético.</p>
         </div>
@@ -230,14 +57,21 @@
           <li>Asesoría y mantenimiento de sistemas eléctricos.</li>
         </ul>
         <div class="transicion">
-          <p>Invertir en un sistema eléctrico moderno es la clave para prevenir fallos y mejorar la eficiencia.</p>
+          <p>
+            Invertir en un sistema eléctrico moderno es la clave para prevenir fallos 
+            y mejorar la eficiencia.
+          </p>
         </div>
       </section>
 
       <!-- Sección Nosotros -->
       <section id="nosotros">
         <h2>Sobre Nosotros</h2>
-        <p>Voltlink es una compañía apasionada por la innovación tecnológica. Contamos con un equipo de expertos con más de 5 años de experiencia en el sector, siempre comprometidos con la excelencia.</p>
+        <p>
+          Voltlink es una compañía apasionada por la innovación tecnológica. 
+          Contamos con un equipo de expertos con más de 5 años de experiencia en el sector, 
+          siempre comprometidos con la excelencia.
+        </p>
         <div class="transicion">
           <p>Nuestro compromiso es ofrecer calidad, confianza y soluciones acertadas para cada cliente.</p>
         </div>
@@ -249,7 +83,7 @@
         <ul>
           <li><strong>Automatización de viviendas:</strong> Sistemas de iluminación y control remoto.</li>
           <li><strong>Instalaciones en oficinas:</strong> Diseño y ejecución de redes eléctricas eficientes.</li>
-          <li><strong>Energías renovables:</strong> Instalación de paneles solares para reducir los costos energéticos.</li>
+          <li><strong>Energías renovables:</strong> Instalación de paneles solares para reducir costos energéticos.</li>
         </ul>
         <div class="transicion">
           <p>Cada proyecto es una oportunidad para innovar y superar expectativas.</p>
@@ -259,8 +93,13 @@
       <!-- Sección Testimonios -->
       <section id="testimonios">
         <h2>Testimonios de Clientes</h2>
-        <blockquote>“Voltlink transformó mi hogar con su sistema de automatización. ¡Increíble servicio!” – Juan Pérez</blockquote>
-        <blockquote>“La instalación fue rápida y profesional. 100% recomendados.” – Ana Gómez</blockquote>
+        <blockquote>
+          “Voltlink transformó mi hogar con su sistema de automatización. ¡Increíble servicio!” 
+          – Juan Pérez
+        </blockquote>
+        <blockquote>
+          “La instalación fue rápida y profesional. 100% recomendados.” – Ana Gómez
+        </blockquote>
         <div class="transicion">
           <p>Tu satisfacción es el motor de nuestro trabajo.</p>
         </div>
@@ -269,7 +108,10 @@
       <!-- Sección Contacto -->
       <section id="contacto">
         <h2>Contacto</h2>
-        <p>¿Interesado en nuestros servicios? Ponte en contacto para recibir más información o una cotización sin compromiso.</p>
+        <p>
+          ¿Interesado en nuestros servicios? Ponte en contacto para recibir más información 
+          o una cotización sin compromiso.
+        </p>
         <form>
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
@@ -290,40 +132,5 @@
       </section>
     </main>
   </div>
-
-  <!-- JAVASCRIPT para navegación dinámica -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const navLinks = document.querySelectorAll("header nav ul li a");
-      const sections = document.querySelectorAll("main section");
-
-      // Función para ocultar todas las secciones y mostrar la seleccionada
-      function showSection(id) {
-        sections.forEach(sec => sec.classList.remove("active"));
-        const target = document.getElementById(id);
-        if (target) {
-          target.classList.add("active");
-        }
-      }
-
-      navLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-          e.preventDefault();
-          const sectionId = this.getAttribute("data-section");
-          showSection(sectionId);
-          // Actualizar la URL con el hash correspondiente
-          window.location.hash = sectionId;
-        });
-      });
-
-      // Al cargar la página, mostrar la sección según el hash (si existe)
-      const initialHash = window.location.hash.substring(1);
-      if (initialHash) {
-        showSection(initialHash);
-      } else {
-        showSection("inicio");
-      }
-    });
-  </script>
 </body>
 </html>
