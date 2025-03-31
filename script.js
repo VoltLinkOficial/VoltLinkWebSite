@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // --- Navegación interna ---
   const navLinks = document.querySelectorAll("header nav ul li a");
   const sections = document.querySelectorAll("main section");
-  const themeToggle = document.getElementById("theme-toggle");
 
-  // Función para mostrar la sección seleccionada
   function showSection(sectionId) {
     sections.forEach(sec => sec.classList.remove("active"));
     const target = document.getElementById(sectionId);
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Asignar eventos a cada enlace del menú
   navLinks.forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // Al cargar la página, mostrar la sección según el hash (si existe)
+  // Muestra la sección según el hash al cargar la página
   const initialHash = window.location.hash.substring(1);
   if (initialHash) {
     showSection(initialHash);
@@ -31,15 +29,38 @@ document.addEventListener("DOMContentLoaded", function() {
     showSection("inicio");
   }
 
-  // Funcionalidad para cambiar tema claro/oscuro
+  // --- Cambio de tema ---
+  const themeToggle = document.getElementById("theme-toggle");
   themeToggle.addEventListener("click", function() {
-    // Alterna la clase "dark" en el body
     document.body.classList.toggle("dark");
-    // Actualiza el texto del botón según el estado
     if (document.body.classList.contains("dark")) {
       themeToggle.textContent = "Tema Claro";
     } else {
       themeToggle.textContent = "Tema Oscuro";
     }
   });
+
+  // --- Envío del formulario de Contacto vía AJAX ---
+  const contactForm = document.getElementById("contact-form");
+  const contactResult = document.getElementById("contact-result");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault(); // Evita el envío por defecto
+      const formData = new FormData(contactForm);
+      
+      fetch("process_contact.php", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        contactResult.textContent = data;
+        contactForm.reset(); // Reinicia el formulario
+      })
+      .catch(error => {
+        contactResult.textContent = "Error al enviar la información. Por favor, inténtelo de nuevo.";
+      });
+    });
+  }
 });
