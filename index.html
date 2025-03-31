@@ -14,7 +14,7 @@
       <div class="logo">Voltlink</div>
       <nav>
         <ul>
-          <!-- Usamos href y data-section para navegación interna -->
+          <!-- Cada enlace utiliza data-section para identificar la sección a mostrar -->
           <li><a href="#inicio" data-section="inicio">Inicio</a></li>
           <li><a href="#servicios" data-section="servicios">Servicios</a></li>
           <li><a href="#nosotros" data-section="nosotros">Nosotros</a></li>
@@ -23,7 +23,7 @@
           <li><a href="#contacto" data-section="contacto">Contacto</a></li>
         </ul>
       </nav>
-      <!-- Botón para cambiar de tema -->
+      <!-- Botón para alternar entre tema claro y oscuro -->
       <button id="theme-toggle">Tema Oscuro</button>
     </div>
   </header>
@@ -34,7 +34,7 @@
     <p>Lleva tu hogar y negocio al siguiente nivel con soluciones innovadoras</p>
   </section>
 
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- CONTENEDOR PRINCIPAL -->
   <div class="container">
     <main>
       <!-- Sección Inicio -->
@@ -59,10 +59,7 @@
           <li>Asesoría y mantenimiento de sistemas eléctricos.</li>
         </ul>
         <div class="transicion">
-          <p>
-            Invertir en un sistema eléctrico moderno es la clave para prevenir fallos 
-            y mejorar la eficiencia.
-          </p>
+          <p>Invertir en un sistema eléctrico moderno es la clave para prevenir fallos y mejorar la eficiencia.</p>
         </div>
       </section>
 
@@ -96,8 +93,7 @@
       <section id="testimonios">
         <h2>Testimonios de Clientes</h2>
         <blockquote>
-          “Voltlink transformó mi hogar con su sistema de automatización. ¡Increíble servicio!” 
-          – Juan Pérez
+          “Voltlink transformó mi hogar con su sistema de automatización. ¡Increíble servicio!” – Juan Pérez
         </blockquote>
         <blockquote>
           “La instalación fue rápida y profesional. 100% recomendados.” – Ana Gómez
@@ -108,31 +104,31 @@
       </section>
 
       <!-- Sección Contacto -->
-     <section id="contacto">
-  <h2>Contacto</h2>
-  <p>
-    ¿Interesado en nuestros servicios? Ponte en contacto para recibir más información 
-    o una cotización sin compromiso.
-  </p>
-  <form action="process_contact.php" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-    
-    <input type="submit" value="Enviar">
-  </form>
-  <br>
-  <button onclick="window.location.href='https://wa.me/6643599459'">WhatsApp</button>
-  <div class="transicion">
-    <p>¡Estamos listos para ayudarte!</p>
-  </div>
-</section>
-
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>
+          ¿Interesado en nuestros servicios? Ponte en contacto para recibir más información 
+          o una cotización sin compromiso.
+        </p>
+        <!-- El formulario envía los datos a process_contact.php para procesarlos -->
+        <form action="process_contact.php" method="post">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          
+          <input type="submit" value="Enviar">
+        </form>
+        <br>
+        <button onclick="window.location.href='https://wa.me/6643599459'">WhatsApp</button>
+        <div class="transicion">
+          <p>¡Estamos listos para ayudarte!</p>
+        </div>
+      </section>
     </main>
   </div>
 </body>
