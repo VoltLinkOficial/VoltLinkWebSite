@@ -58,7 +58,7 @@ nav ul li a:hover {
   border-radius: 3px;
 }
 
-/* Estilo para el botón de tema */
+/* Botón de tema */
 #theme-toggle {
   background-color: #161448;
   color: #fff;
@@ -67,7 +67,6 @@ nav ul li a:hover {
   font-size: 14px;
   cursor: pointer;
   border-radius: 3px;
-  margin-left: 20px;
   transition: background-color 0.3s;
 }
 
@@ -144,7 +143,7 @@ main section blockquote {
   color: #555;
 }
 
-/* Bloque de información con fondo para transiciones internas */
+/* Bloque de transición interno */
 .transicion {
   background-color: #e0e0f8;
   color: #333;
@@ -225,7 +224,7 @@ form textarea {
   }
 }
 
-/* Estilos para el tema oscuro */
+/* Modo oscuro */
 body.dark {
   background-color: #222;
   color: #ccc;
@@ -259,7 +258,6 @@ body.dark input[type="submit"] {
   background-color: #161448;
 }
 
-/* Estilos para el botón de tema en modo oscuro */
 body.dark #theme-toggle {
   background-color: #ccc;
   color: #000;
