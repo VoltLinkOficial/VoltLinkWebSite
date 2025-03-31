@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Voltlink - Sitio Multipágina en 1 Archivo</title>
+  <title>Voltlink - Sitio Único</title>
   <style>
     /* Estilos generales */
     body {
@@ -18,11 +18,11 @@
       background-color: #111;
       color: white;
       padding: 20px;
-      text-align: center;
     }
     nav ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
     nav ul li {
       display: inline;
@@ -34,23 +34,27 @@
       font-size: 18px;
       cursor: pointer;
     }
+    main {
+      position: relative;
+      min-height: 400px;
+    }
+    /* Cada sección se coloca en bloque, pero solo la activa se muestra */
     main section {
-      display: none; /* Oculta todas las secciones por defecto */
+      display: none;
       padding: 50px 20px;
       margin: 20px auto;
-      background-color: white;
+      background-color: #fff;
       border-radius: 10px;
       max-width: 900px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
-    /* La sección activa se muestra */
     main section.active {
       display: block;
       opacity: 1;
     }
-    /* Estilos para transiciones internas */
+    /* Estilos de las transiciones internas a cada sección */
     .transicion {
       background-color: #ffcc00;
       color: #000;
@@ -59,7 +63,7 @@
       font-weight: bold;
       border-radius: 5px;
     }
-    /* Botones, por ejemplo para WhatsApp */
+    /* Botón de WhatsApp */
     button {
       background-color: #25d366;
       color: white;
@@ -80,21 +84,21 @@
     <h1>Voltlink</h1>
     <p>Instalaciones Eléctricas & Automatización del Hogar</p>
     <nav>
-      <!-- Cada enlace utiliza un atributo data-section para identificar la sección que debe mostrarse -->
       <ul>
-        <li><a data-section="inicio">Inicio</a></li>
-        <li><a data-section="servicios">Servicios</a></li>
-        <li><a data-section="nosotros">Nosotros</a></li>
-        <li><a data-section="proyectos">Proyectos</a></li>
-        <li><a data-section="testimonios">Testimonios</a></li>
-        <li><a data-section="contacto">Contacto</a></li>
+        <!-- Se incluyen href y data-section para mayor semántica y usabilidad -->
+        <li><a href="#inicio" data-section="inicio">Inicio</a></li>
+        <li><a href="#servicios" data-section="servicios">Servicios</a></li>
+        <li><a href="#nosotros" data-section="nosotros">Nosotros</a></li>
+        <li><a href="#proyectos" data-section="proyectos">Proyectos</a></li>
+        <li><a href="#testimonios" data-section="testimonios">Testimonios</a></li>
+        <li><a href="#contacto" data-section="contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
   
   <main>
-    <!-- Cada sección se identifica con un ID único -->
-    <section id="inicio" class="active">
+    <!-- Cada sección representa un apartado, de forma exclusiva -->
+    <section id="inicio">
       <h2>Bienvenidos a Voltlink</h2>
       <p>Somos expertos en instalaciones eléctricas y automatización del hogar. ¡Lleva tu hogar al siguiente nivel con nuestras soluciones innovadoras!</p>
       <div class="transicion">
@@ -117,9 +121,9 @@
     
     <section id="nosotros">
       <h2>Sobre Nosotros</h2>
-      <p>Voltlink es una empresa apasionada por la tecnología y la innovación. Con más de 5 años de experiencia, ofrecemos soluciones seguras y eficientes.</p>
+      <p>Voltlink es una empresa apasionada por la tecnología y la innovación. Contamos con un equipo de expertos con más de 5 años de experiencia en el sector.</p>
       <div class="transicion">
-        <p>Calidad, confianza y compromiso son nuestros pilares.</p>
+        <p>La calidad, confianza y compromiso son nuestros pilares.</p>
       </div>
     </section>
     
@@ -127,11 +131,11 @@
       <h2>Nuestros Proyectos</h2>
       <ul>
         <li><strong>Automatización de viviendas:</strong> Sistemas de iluminación y control remoto.</li>
-        <li><strong>Instalaciones en oficinas:</strong> Diseño de redes eléctricas eficientes.</li>
-        <li><strong>Energías renovables:</strong> Instalación de paneles solares.</li>
+        <li><strong>Instalaciones en oficinas:</strong> Redes eléctricas eficientes.</li>
+        <li><strong>Energías renovables:</strong> Instalación de paneles solares para reducir costos.</li>
       </ul>
       <div class="transicion">
-        <p>Cada proyecto es una oportunidad para innovar.</p>
+        <p>Cada proyecto es una oportunidad para innovar y mejorar.</p>
       </div>
     </section>
     
@@ -146,7 +150,7 @@
     
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>¿Interesado en nuestros servicios? Contáctanos para más información o una cotización gratuita.</p>
+      <p>¿Interesado en nuestros servicios? Escríbenos para más información o para una cotización gratuita.</p>
       <form>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -167,36 +171,37 @@
   </main>
 
   <script>
-    // Selecciona todos los enlaces de navegación
-    const navLinks = document.querySelectorAll('header nav ul li a');
-    const sections = document.querySelectorAll('main section');
+    document.addEventListener("DOMContentLoaded", function() {
+      const navLinks = document.querySelectorAll("header nav ul li a");
+      const sections = document.querySelectorAll("main section");
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        const sectionId = this.getAttribute('data-section');
-        // Oculta todas las secciones
-        sections.forEach(sec => {
-          sec.classList.remove('active');
-        });
-        // Muestra la sección correspondiente añadiéndole la clase 'active'
-        const targetSection = document.getElementById(sectionId);
+      // Función para mostrar la sección seleccionada
+      function showSection(id) {
+        sections.forEach(sec => sec.classList.remove("active"));
+        const targetSection = document.getElementById(id);
         if (targetSection) {
-          targetSection.classList.add('active');
-          // Opcional: actualizar el hash para permitir bookmarking
+          targetSection.classList.add("active");
+        }
+      }
+
+      // Asignamos el evento a cada enlace
+      navLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault(); // Evita el comportamiento por defecto del enlace
+          const sectionId = this.getAttribute("data-section");
+          showSection(sectionId);
+          // Actualiza el hash en la URL para facilitar el bookmarking
           window.location.hash = sectionId;
-        }
+        });
       });
-    });
 
-    // Opcional: Al cargar, si hay un hash en la URL, mostrar la sección correspondiente
-    window.addEventListener('load', () => {
-      const hash = window.location.hash.substring(1);
-      if (hash) {
-        sections.forEach(sec => sec.classList.remove('active'));
-        const targetSection = document.getElementById(hash);
-        if (targetSection) {
-          targetSection.classList.add('active');
-        }
+      // Al cargar la página, revisa si hay un hash en la URL
+      const initialHash = window.location.hash.substring(1);
+      if (initialHash) {
+        showSection(initialHash);
+      } else {
+        // Si no hay hash, muestra la sección de inicio por defecto
+        showSection("inicio");
       }
     });
   </script>
