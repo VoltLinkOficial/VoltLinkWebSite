@@ -110,8 +110,8 @@
           ¿Interesado en nuestros servicios? Ponte en contacto para recibir más información 
           o una cotización sin compromiso.
         </p>
-        <!-- El formulario envía los datos a process_contact.php para procesarlos -->
-        <form action="process_contact.php" method="post">
+        <!-- Formulario con ID para ser manejado vía AJAX -->
+        <form id="contact-form">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
           
@@ -123,8 +123,10 @@
           
           <input type="submit" value="Enviar">
         </form>
+        <!-- Div para mostrar el resultado del envío -->
+        <div id="contact-result"></div>
         <br>
-        <button onclick="window.location.href='https://wa.me/6643599459'">WhatsApp</button>
+        <button onclick="window.location.href='https://wa.me/tu-numero'">WhatsApp</button>
         <div class="transicion">
           <p>¡Estamos listos para ayudarte!</p>
         </div>
