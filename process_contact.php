@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Recoger y sanitizar los datos
+  // Recoger y sanitizar los datoss
   $nombre  = isset($_POST['nombre']) ? filter_var($_POST['nombre'], FILTER_SANITIZE_STRING) : '';
   $email   = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : '';
   $mensaje = isset($_POST['mensaje']) ? filter_var($_POST['mensaje'], FILTER_SANITIZE_STRING) : '';
