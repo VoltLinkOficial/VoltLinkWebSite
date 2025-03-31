@@ -2,35 +2,203 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voltlink - Inicio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voltlink - Sitio Multipágina en 1 Archivo</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    main section {
+      display: none; /* Oculta todas las secciones por defecto */
+      padding: 50px 20px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    /* La sección activa se muestra */
+    main section.active {
+      display: block;
+      opacity: 1;
+    }
+    /* Estilos para transiciones internas */
+    .transicion {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 20px;
+      margin-top: 30px;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    /* Botones, por ejemplo para WhatsApp */
+    button {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #1da851;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Voltlink</h1>
     <p>Instalaciones Eléctricas & Automatización del Hogar</p>
     <nav>
+      <!-- Cada enlace utiliza un atributo data-section para identificar la sección que debe mostrarse -->
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a data-section="inicio">Inicio</a></li>
+        <li><a data-section="servicios">Servicios</a></li>
+        <li><a data-section="nosotros">Nosotros</a></li>
+        <li><a data-section="proyectos">Proyectos</a></li>
+        <li><a data-section="testimonios">Testimonios</a></li>
+        <li><a data-section="contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <main>
-    <section id="inicio" class="visible">
+    <!-- Cada sección se identifica con un ID único -->
+    <section id="inicio" class="active">
       <h2>Bienvenidos a Voltlink</h2>
       <p>Somos expertos en instalaciones eléctricas y automatización del hogar. ¡Lleva tu hogar al siguiente nivel con nuestras soluciones innovadoras!</p>
       <div class="transicion">
-        <p>La automatización del hogar no solo mejora tu comodidad, sino que también aumenta la seguridad y la eficiencia energética.</p>
+        <p>La automatización del hogar mejora la comodidad, seguridad y eficiencia energética.</p>
+      </div>
+    </section>
+    
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+      <ul>
+        <li>Instalaciones eléctricas residenciales y comerciales.</li>
+        <li>Automatización del hogar y edificios inteligentes.</li>
+        <li>Instalación de paneles solares y energías renovables.</li>
+        <li>Asesoría y mantenimiento de sistemas eléctricos.</li>
+      </ul>
+      <div class="transicion">
+        <p>Invertir en un sistema eléctrico moderno es clave para evitar fallos y mejorar la eficiencia.</p>
+      </div>
+    </section>
+    
+    <section id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Voltlink es una empresa apasionada por la tecnología y la innovación. Con más de 5 años de experiencia, ofrecemos soluciones seguras y eficientes.</p>
+      <div class="transicion">
+        <p>Calidad, confianza y compromiso son nuestros pilares.</p>
+      </div>
+    </section>
+    
+    <section id="proyectos">
+      <h2>Nuestros Proyectos</h2>
+      <ul>
+        <li><strong>Automatización de viviendas:</strong> Sistemas de iluminación y control remoto.</li>
+        <li><strong>Instalaciones en oficinas:</strong> Diseño de redes eléctricas eficientes.</li>
+        <li><strong>Energías renovables:</strong> Instalación de paneles solares.</li>
+      </ul>
+      <div class="transicion">
+        <p>Cada proyecto es una oportunidad para innovar.</p>
+      </div>
+    </section>
+    
+    <section id="testimonios">
+      <h2>Testimonios de Clientes</h2>
+      <blockquote>“Voltlink transformó mi hogar con su sistema de automatización. ¡Increíble servicio!” – Juan Pérez</blockquote>
+      <blockquote>“La instalación en mi negocio fue profesional. 100% recomendados.” – Ana Gómez</blockquote>
+      <div class="transicion">
+        <p>Tu satisfacción es nuestra prioridad.</p>
+      </div>
+    </section>
+    
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>¿Interesado en nuestros servicios? Contáctanos para más información o una cotización gratuita.</p>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        
+        <button type="submit">Enviar</button>
+      </form>
+      <button onclick="window.location.href='https://wa.me/tu-numero'">WhatsApp</button>
+      <div class="transicion">
+        <p>¡Estamos listos para ayudarte!</p>
       </div>
     </section>
   </main>
+
+  <script>
+    // Selecciona todos los enlaces de navegación
+    const navLinks = document.querySelectorAll('header nav ul li a');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const sectionId = this.getAttribute('data-section');
+        // Oculta todas las secciones
+        sections.forEach(sec => {
+          sec.classList.remove('active');
+        });
+        // Muestra la sección correspondiente añadiéndole la clase 'active'
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          // Opcional: actualizar el hash para permitir bookmarking
+          window.location.hash = sectionId;
+        }
+      });
+    });
+
+    // Opcional: Al cargar, si hay un hash en la URL, mostrar la sección correspondiente
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        sections.forEach(sec => sec.classList.remove('active'));
+        const targetSection = document.getElementById(hash);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+      }
+    });
+  </script>
 </body>
 </html>
