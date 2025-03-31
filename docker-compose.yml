@@ -1,6 +1,5 @@
 version: "3"
 services:
-  web:
     image: php:7.4-apache
     container_name: demo_web
     volumes:
